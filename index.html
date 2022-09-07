@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css?v=<?php echo time(); ?>">
+    <script src="https://kit.fontawesome.com/7dc7cd87de.js" crossorigin="anonymous"></script>
+    <script type="text/JavaScript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js?ver=1.4.2"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+</head>
+
+<body style="text-align:center;">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+    <div id="actions">
+        <button id="clearbtn"><span id="clear">Clear <i class="fa-solid fa-trash-can"></i></span></button>
+        
+        <select style="padding:10px;" name="class" id="class">
+            <option value="circle">Circle</option>
+            <option value="triangle">Triangle</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="heart">Heart</option>
+            <option value="star">Star</option>
+        </select>
+
+        <button><span id="upinc">1. Upload Partial <i class="fa-solid fa-upload"></i></span></button>
+        <button><span id="upcom">2. Upload Complete <i class="fa-solid fa-upload"></i></span></button>
+        <button><span id="down">Download <i class="fa-solid fa-download"></i></span></button>
+
+        
+    </div>
+
+    <canvas id="myCanvas">
+    </canvas>
+    <script src="./main.js"></script>
+
+
+    <!--<script>
+        var myCanvas = document.getElementById('myCanvas');
+        var dataURL = myCanvas.toDataURL();
+
+        var upinc = document.getElementById("abcd");
+        var upcom = document.getElementById("abcd");
+
+        upinc.addEventListener('click', function () {
+            $.ajax({
+                type: "POST",
+                url: "backend/savepartial.php",
+                data: {
+                    imgBase64: dataURL,
+                    class: "select_class"
+                },
+
+                success: function(data) {
+                    setTimeout(function() {
+                        $("#upinc").html(data);
+                    }, 1000);
+                },
+
+            }).done(function (o) {
+                console.log('saved incomplete img');
+                alert("Partial Image Uploaded, Thanks");
+            });
+        });
+
+        upcom.addEventListener('click', function () {
+            $.ajax({
+                type: "POST",
+                url: "backend/saveimg.php",
+                /* data: {
+                     //imgBase64: dataURL
+                     username: "arnabhelloworld"
+ 
+                 }*/
+                data: 'username=' + 'someusername',
+
+            }).done(function (o) {
+                console.log('saved complete image');
+                alert("Complete Image Uploaded, Thanks");
+            });
+        });
+    </script>-->
+</body>
+
+</html>
